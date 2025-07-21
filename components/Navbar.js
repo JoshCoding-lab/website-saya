@@ -13,7 +13,10 @@ export default function Navbar() {
 
         {/* Hamburger */}
         <div className="md:hidden">
-          <button onClick={() => setIsOpen(!isOpen)} className="focus:outline-none">
+          <button 
+            onClick={() => setIsOpen(!isOpen)} 
+            className="focus:outline-none p-2 rounded-md hover:bg-blue-600 transition"
+          >
             <svg
               className="w-6 h-6"
               fill="none"
@@ -31,10 +34,12 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex gap-6">
+        <div className="hidden md:flex gap-4">
           {menuItems.map(({ href, label }) => (
-            <Link href={href} key={href} className="hover:text-yellow-300 transition">
-              {label}
+            <Link href={href} key={href}>
+              <button className="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-md transition">
+                {label}
+              </button>
             </Link>
           ))}
         </div>
@@ -50,15 +55,15 @@ export default function Navbar() {
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <div className="flex flex-col p-4 space-y-2">
+            <div className="flex flex-col p-2 space-y-2">
               {menuItems.map(({ href, label }) => (
-                <Link
-                  href={href}
-                  key={href}
-                  className="text-white hover:text-yellow-300"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {label}
+                <Link href={href} key={href}>
+                  <button 
+                    className="w-full text-left bg-blue-700 hover:bg-blue-500 text-white px-4 py-2 rounded-md transition"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {label}
+                  </button>
                 </Link>
               ))}
             </div>
