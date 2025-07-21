@@ -81,7 +81,7 @@ export default function Home() {
           >
             <div className="relative">
               <img
-                src="/hero-image.svg"
+                src="/hero-image.png"
                 alt="Digital Security Illustration"
                 className="w-full h-auto max-w-lg mx-auto drop-shadow-xl"
               />
